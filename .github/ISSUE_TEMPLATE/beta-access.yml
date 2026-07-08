@@ -1,0 +1,46 @@
+name: Beta access request
+description: Request TestFlight access to WatchDiver as a secondary display.
+title: "Beta access request"
+labels: ["beta"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for wanting to test WatchDiver! Remember: it is a **secondary display,
+        not a certified dive computer** — you always dive it next to an independent,
+        certified computer.
+
+        **Privacy note:** this issue is public. Please do **not** post your Apple ID
+        or your full name here — see the last step below.
+  - type: textarea
+    id: diving
+    attributes:
+      label: Certification level and typical diving
+      description: Your certification and the kind of diving you do (depths, frequency, waters).
+      placeholder: "e.g. CMAS**, ~40 dives/year, cold-water lakes and Red Sea holidays, mostly 20–35 m"
+    validations:
+      required: true
+  - type: input
+    id: reference-computer
+    attributes:
+      label: Reference dive computer
+      description: The certified dive computer you will wear next to WatchDiver during the beta.
+      placeholder: "e.g. Shearwater Peregrine, Suunto D5, Garmin Descent Mk3, Mares Puck Pro"
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I dive an Apple Watch Ultra and will use WatchDiver only as a secondary display next to my certified dive computer.
+          required: true
+  - type: markdown
+    attributes:
+      value: |
+        **Last step — TestFlight invitation:** after submitting this issue, send the
+        e-mail address of your Apple ID to
+        **[matthias.r.schmid@gmail.com](mailto:matthias.r.schmid@gmail.com)** and
+        mention this issue's ticket number (e.g. “Beta access request #12”). The
+        Apple ID is needed for the TestFlight invitation and stays out of the public
+        issue on purpose.
