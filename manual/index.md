@@ -39,6 +39,7 @@ Both demos run on a separate, sandboxed model — your real tissue state, logboo
 |---|---|
 | **Interactive demo** | You are the depth profile: the Digital Crown sets the depth, and time runs at ×60 (1 s of real time = 1 min of dive time). Turning the crown up n metres within one second ascends at n m/min — provoke the NDL warning, deco, a stop violation, SLOW, the sensor limit, the safety stop, then hold 0 m to surface and see the log and no-fly. |
 | **Guided demo** | Hands-free autoplay of a complete deco dive (30 m, stops, safety band, log) — the walkthrough mode for a dive-school briefing. |
+| **TAP ⇄ TISSUES** | Tap the demo screen to flip between the dive display and the Tissues page — watch the compartment bars load and clear live while the profile runs. Demo-only: in the water the touchscreen stays locked. |
 | **DEMO ×60 badge** | Always visible during a demo, so a demo screen can never be mistaken for a live dive. Demo sessions have no DIVE button. |
 
 ## Why a dive computer at all
