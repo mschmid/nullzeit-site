@@ -9,14 +9,27 @@ every `swift run generate-manual` in the app repository.
 """
 import sys, re, pathlib
 
-# section heading -> (image file, alt text, caption)
+# section heading -> list of (image file, alt text, caption)
 IMAGES = {
-    "Read me first": ("ready.png", "READY screen with gas, gradient factors, sensor limit and the secondary-display disclaimer", "Pre-dive READY screen — the disclaimer is always visible."),
-    "The five pages": ("tissues.png", "Tissue saturation page with compartment bars and M-value line", "The Tissues page: compartment loading against the M-value line."),
-    "Dive display, top to bottom": ("dive-air.png", "Dive display showing depth and the no-deco limit", "The dive display on air: depth rules the screen."),
-    "Screens and colours": ("deco.png", "Decompression screen with amber accents, first stop and time to surface", "Deco: amber state, first stop and time-to-surface."),
-    "Warnings and honesty": ("violation.png", "Red ABOVE STOP - DESCEND directive during a stop violation", "A stop violation: the red directive names the action."),
-    "Demo dives (Try it)": ("demo.png", "Demo dive with the DEMO x60 badge", "A demo dive — the DEMO badge stays visible throughout."),
+    "Read me first": [
+        ("ready.png", "READY screen with gas, gradient factors, sensor limit and the secondary-display disclaimer", "Pre-dive READY screen — the disclaimer is always visible."),
+    ],
+    "The five pages": [
+        ("dive-air.png", "Dive page showing water temperature, dive time, depth and the no-deco limit", "Page 1, the dive display: depth rules the screen."),
+    ],
+    "Dive display, top to bottom": [
+        ("deco.png", "Decompression screen with temperature, dive time, depth, GF, ceiling, first stop and time to surface", "All elements populated: a dive in decompression."),
+    ],
+    "Screens and colours": [
+        ("violation.png", "Red ABOVE STOP - DESCEND directive during a stop violation", "A stop violation: the red directive names the action."),
+        ("slow.png", "SLOW - ASCENT TOO FAST takeover showing 15 m/min against 10 max safe", "Ascending too fast: SLOW with the live rate against the safe maximum."),
+    ],
+    "Demo dives (Try it)": [
+        ("demo.png", "Demo dive with the DEMO x60 badge", "A demo dive — the DEMO badge stays visible throughout."),
+    ],
+    "The model, in one breath": [
+        ("tissues.png", "Tissue saturation page with compartment bars and M-value line", "The Tissues page: compartment loading against the M-value line."),
+    ],
 }
 
 FRONT = """---
@@ -29,8 +42,8 @@ MIRROR_NOTE = "> Mirror of the WatchDiver in-app Manual page — generated from 
 
 
 def figure(filename, alt, caption):
-    return (f'\n<img src="../assets/screens/{filename}" alt="{alt}" width="240">\n\n'
-            f'*{caption}*\n')
+    return (f'\n<p align="center"><img src="../assets/screens/{filename}" alt="{alt}" width="240"><br>'
+            f'<em>{caption}</em></p>\n')
 
 
 def main():
@@ -40,13 +53,16 @@ def main():
     if len(lines) > 2 and lines[2].startswith("> Generated from"):
         lines[2] = MIRROR_NOTE
     out = []
+    count = 0
     for line in lines:
         out.append(line)
         m = re.match(r"^## (.+)$", line)
         if m and m.group(1) in IMAGES:
-            out.append(figure(*IMAGES[m.group(1)]))
+            for spec in IMAGES[m.group(1)]:
+                out.append(figure(*spec))
+                count += 1
     pathlib.Path("manual/index.md").write_text(FRONT + "\n".join(out) + "\n")
-    print(f"manual/index.md written ({len(IMAGES)} figures)")
+    print(f"manual/index.md written ({count} figures)")
 
 
 if __name__ == "__main__":

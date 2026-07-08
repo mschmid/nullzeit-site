@@ -8,25 +8,21 @@ title: WatchDiver Manual
 
 ## Read me first
 
-<img src="../assets/screens/ready.png" alt="READY screen with gas, gradient factors, sensor limit and the secondary-display disclaimer" width="240">
-
-*Pre-dive READY screen — the disclaimer is always visible.*
+<p align="center"><img src="../assets/screens/ready.png" alt="READY screen with gas, gradient factors, sensor limit and the secondary-display disclaimer" width="240"><br><em>Pre-dive READY screen — the disclaimer is always visible.</em></p>
 
 
 WatchDiver is a SECONDARY DISPLAY, not a certified dive computer (no EN 13319, no redundancy). Always dive with an independent, certified dive computer and follow it and your training. If the two displays disagree, the certified computer wins — every time. Test each build with a demo dive (“Try it”, below) on land before taking it near water.
 
 ## The five pages
 
-<img src="../assets/screens/tissues.png" alt="Tissue saturation page with compartment bars and M-value line" width="240">
-
-*The Tissues page: compartment loading against the M-value line.*
+<p align="center"><img src="../assets/screens/dive-air.png" alt="Dive page showing water temperature, dive time, depth and the no-deco limit" width="240"><br><em>Page 1, the dive display: depth rules the screen.</em></p>
 
 
 Turn the Digital Crown to change pages. Underwater the touchscreen is water-locked; everything is readable by glance, nothing needs a tap. The ring shows only pages that currently mean something: while diving (armed or submerged) it is Dive and Tissues; at the surface, Settings and Manual are always there, the Logbook joins once it holds a dive, and Tissues stays visible while your tissues carry loading from a dive.
 
 | Term | Meaning |
 |---|---|
-| **1 · Dive** | The main display: depth, time, gas, and the one operative instruction (NDL, stop, or a directive). |
+| **1 · Dive** | The main display: depth, time, and the one operative instruction (NDL, stop, or a directive). |
 | **2 · Tissues** | 16 bars, one per tissue compartment (fast → slow), each as % of its surface M-value. Long bars = loaded tissue. The header shows the live GF and ppO₂. |
 | **3 · Logbook** | Saved dives, newest first. Swipe a dive left to delete it; swipe right to save it to Apple Health or to share it as a UDDF file. |
 | **4 · Settings** | Gas, gradient factors, water type, altitude. Surface only — locked during the dive. |
@@ -50,14 +46,12 @@ Press DIVE on the READY screen before entering the water — that is the determi
 
 ## Dive display, top to bottom
 
-<img src="../assets/screens/dive-air.png" alt="Dive display showing depth and the no-deco limit" width="240">
-
-*The dive display on air: depth rules the screen.*
+<p align="center"><img src="../assets/screens/deco.png" alt="Decompression screen with temperature, dive time, depth, GF, ceiling, first stop and time to surface" width="240"><br><em>All elements populated: a dive in decompression.</em></p>
 
 
 | Term | Meaning |
 |---|---|
-| **TEMP · DIVE · GAS** | Water temperature (°C), time since submerging (m:ss), breathing gas. |
+| **TEMP · DIVE** | Water temperature (°C) and time since submerging (m:ss). On nitrox, a GAS column joins them — on air it stays out of the way. |
 | **DEPTH** | Current depth in metres — the biggest number on screen, and the one that rules. |
 | **▲ / ▼ n** | Vertical speed in m/min (▲ ascending, ▼ descending). Green ≤ 9, amber near 10, red above 12. |
 | **MAX** | Deepest point of this dive (m). |
@@ -67,9 +61,10 @@ Press DIVE on the READY screen before entering the water — that is the determi
 
 ## Screens and colours
 
-<img src="../assets/screens/deco.png" alt="Decompression screen with amber accents, first stop and time to surface" width="240">
+<p align="center"><img src="../assets/screens/violation.png" alt="Red ABOVE STOP - DESCEND directive during a stop violation" width="240"><br><em>A stop violation: the red directive names the action.</em></p>
 
-*Deco: amber state, first stop and time-to-surface.*
+
+<p align="center"><img src="../assets/screens/slow.png" alt="SLOW - ASCENT TOO FAST takeover showing 15 m/min against 10 max safe" width="240"><br><em>Ascending too fast: SLOW with the live rate against the safe maximum.</em></p>
 
 
 Colour is never the only signal — every state also changes its text. Teal = fine, amber = caution, red = act now. The background tints with depth and floods amber/red with severity.
@@ -80,7 +75,7 @@ Colour is never the only signal — every state also changes its text. Teal = fi
 | **Teal depth** | Inside the NDL, comfortably. Nothing to do but enjoy. |
 | **▲ ASCEND SOON (amber)** | NDL at or below 5 min: begin the ascent soon or accept a deco obligation. |
 | **DECOMPRESSION (amber badge)** | Direct ascent no longer allowed. The card shows the first stop (depth · minutes) and TTS. Ascend to the stop, never above it. |
-| **▲ ABOVE STOP — DESCEND (red)** | You are shallower than a mandatory stop: descend below the stop depth immediately. Pulsing red background, repeating strong buzz. |
+| **▼ ABOVE STOP — DESCEND (red)** | You are shallower than a mandatory stop: descend below the stop depth immediately. Pulsing red background, repeating strong buzz. |
 | **SLOW — ASCENT TOO FAST** | Ascending faster than 12 m/min. Full-screen takeover: slow down until it disappears (target ≤ 10 m/min). |
 | **ASCEND — PAST SENSOR LIMIT** | At/past the sensor's maximum depth. Depth data is unreliable from here — ascend. Warned in amber from 90 % of the limit (“NEAR x m SENSOR LIMIT”). |
 | **SAFETY STOP ring** | Advisory 3-min hold at 5 m after dives beyond 10 m. The ring shows the countdown and your live depth — hold it near 5 m. A mandatory deco stop always wins the screen; after a deco dive the countdown starts once the last mandatory stop is cleared (do the safety stop anyway — recommended practice). Success buzz when done. |
@@ -98,11 +93,6 @@ Three levels, matching the colours:
 | **Success pattern** | Safety stop completed — clear to surface (advisory). |
 
 ## Warnings and honesty
-
-<img src="../assets/screens/violation.png" alt="Red ABOVE STOP - DESCEND directive during a stop violation" width="240">
-
-*A stop violation: the red directive names the action.*
-
 
 A visible failure beats a plausible wrong number. These lines can appear at the bottom of the dive display or on READY:
 
@@ -155,9 +145,7 @@ WatchDiver can live on your watch face (add it like any complication when editin
 
 ## Demo dives (Try it)
 
-<img src="../assets/screens/demo.png" alt="Demo dive with the DEMO x60 badge" width="240">
-
-*A demo dive — the DEMO badge stays visible throughout.*
+<p align="center"><img src="../assets/screens/demo.png" alt="Demo dive with the DEMO x60 badge" width="240"><br><em>A demo dive — the DEMO badge stays visible throughout.</em></p>
 
 
 Both demos run on a separate, sandboxed model — your real tissue state, logbook and recovery snapshot stay untouched, guaranteed. The display is the production dive screen, and the vibrations are real: learning the haptic vocabulary is the point. Never start a demo in the water.
@@ -169,6 +157,9 @@ Both demos run on a separate, sandboxed model — your real tissue state, logboo
 | **DEMO ×60 badge** | Always visible during a demo, so a demo screen can never be mistaken for a live dive. Demo sessions have no DIVE button. |
 
 ## The model, in one breath
+
+<p align="center"><img src="../assets/screens/tissues.png" alt="Tissue saturation page with compartment bars and M-value line" width="240"><br><em>The Tissues page: compartment loading against the M-value line.</em></p>
+
 
 Bühlmann ZH-L16C with gradient factors (Erik Baker): 16 theoretical nitrogen compartments load and unload exponentially; the display warns when the most loaded one approaches its tolerated limit. Like every dive computer, it assumes average body conditions — cold, exertion, dehydration and personal physiology are not measured; dive conservatively when they apply.
 
