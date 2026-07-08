@@ -42,7 +42,7 @@ MIRROR_NOTE = "> Mirror of the WatchDiver in-app Manual page — generated from 
 
 
 def figure(filename, alt, caption):
-    return (f'\n<p align="center"><img src="../assets/screens/{filename}" alt="{alt}" width="240"><br>'
+    return (f'\n<p align="center"><img src="../assets/screens/{filename}?v=3" alt="{alt}" width="240"><br>'
             f'<em>{caption}</em></p>\n')
 
 
