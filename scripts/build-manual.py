@@ -24,7 +24,7 @@ IMAGES = {
         ("violation.png", "Red ABOVE STOP - DESCEND directive during a stop violation", "A stop violation: the red directive names the action."),
         ("slow.png", "SLOW - ASCENT TOO FAST takeover showing 15 m/min against 10 max safe", "Ascending too fast: SLOW with the live rate against the safe maximum."),
     ],
-    "Demo dives (Try it)": [
+    "Try it on land": [
         ("demo.png", "Demo dive with the DEMO x60 badge", "A demo dive — the DEMO badge stays visible throughout."),
     ],
     "The model, in one breath": [
