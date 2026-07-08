@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WatchDiver — a dive secondary display for the Apple Watch Ultra</title>
+<meta name="description" content="WatchDiver turns the Apple Watch Ultra into a decompression secondary display — not a certified dive computer. Test the beta, support the certification path.">
+<style>
+  :root {
+    --bg: #0b0f14; --card: #141b23; --ink: #e8edf2; --dim: #93a1b0;
+    --ok: #45d6b1; --warn: #ffb340; --alert: #ff5a4e; --cta: #ff7a1a;
+    --maxw: 760px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  main { max-width: var(--maxw); margin: 0 auto; padding: 24px 20px 64px; }
+  h1 { font-size: 2.4rem; letter-spacing: .02em; }
+  h2 { font-size: 1.4rem; margin: 48px 0 12px; color: var(--ok); }
+  p { margin: 10px 0; }
+  .tagline { color: var(--dim); font-size: 1.15rem; margin-top: 4px; }
+  .hero { padding-top: 40px; }
+  .badge {
+    display: inline-block; margin: 18px 0 6px; padding: 10px 14px;
+    border: 1px solid var(--warn); border-radius: 10px; color: var(--warn);
+    font-weight: 600; background: rgba(255, 179, 64, .07);
+  }
+  .disclaimer { color: var(--dim); font-size: .95rem; }
+  .cols { display: grid; gap: 16px; grid-template-columns: 1fr; margin-top: 12px; }
+  @media (min-width: 640px) { .cols { grid-template-columns: 1fr 1fr; } }
+  .card { background: var(--card); border-radius: 14px; padding: 18px 20px; }
+  .card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+  .card.is { border-left: 3px solid var(--ok); }
+  .card.isnot { border-left: 3px solid var(--alert); }
+  ul { padding-left: 20px; }
+  li { margin: 6px 0; }
+  li::marker { color: var(--ok); }
+  .isnot li::marker { color: var(--alert); }
+  .screens { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-top: 16px; }
+  .screens figure { text-align: center; }
+  .screens img {
+    width: 100%; max-width: 190px; border-radius: 22px;
+    border: 1px solid #26303b; display: block; margin: 0 auto;
+  }
+  .screens figcaption { font-size: .85rem; color: var(--dim); margin-top: 6px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0 6px; }
+  a.btn {
+    display: inline-block; padding: 13px 22px; border-radius: 999px;
+    text-decoration: none; font-weight: 700; font-size: 1.02rem;
+  }
+  a.btn.primary { background: var(--cta); color: #fff; }
+  a.btn.secondary { border: 1.5px solid var(--ok); color: var(--ok); }
+  a { color: var(--ok); }
+  .road { border-left: 3px solid var(--warn); }
+  footer {
+    border-top: 1px solid #1d2630; margin-top: 56px; padding-top: 18px;
+    color: var(--dim); font-size: .88rem;
+  }
+</style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <h1>WatchDiver</h1>
+    <p class="tagline">A decompression secondary display for the Apple&nbsp;Watch&nbsp;Ultra.</p>
+    <div class="badge">Not a certified dive computer — a secondary display.</div>
+    <p class="disclaimer">No EN&nbsp;13319 approval, no redundancy. Always dive with an independent,
+    certified dive computer and follow it and your training. If the two displays disagree,
+    the certified computer wins — every time.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="https://github.com/mschmid/watchdiver/issues/new?labels=beta&amp;title=Beta+access+request&amp;body=I+dive+an+Apple+Watch+Ultra+and+want+to+test+WatchDiver+as+a+secondary+display.%0A%0AMy+certification+level+and+typical+diving:">Request beta access</a>
+      <a class="btn secondary" href="manual/">Read the manual</a>
+    </div>
+  </section>
+
+  <h2>What it does today</h2>
+  <div class="cols">
+    <div class="card is">
+      <h3>On your wrist, during the dive</h3>
+      <ul>
+        <li>Live depth, dive time and water temperature from the Ultra's native depth sensor</li>
+        <li>ZH-L16C tissue model (Bühlmann, gradient factors): no-deco limit, stops, ceiling, time-to-surface</li>
+        <li>Safety-stop guidance, ascent-rate and depth-limit warnings — traffic-light colours plus distinct haptics</li>
+        <li>Zero-touch under Water Lock: everything readable by glance, the crown does the rest</li>
+        <li>Logbook with dive profile, tissue view, built-in manual and demo dives</li>
+        <li>No internet, no phone, no account needed — works on the boat, on the island</li>
+      </ul>
+    </div>
+    <div class="card isnot">
+      <h3>What it is not</h3>
+      <ul>
+        <li>Not a dive computer — not certified to EN&nbsp;13319, no pressure-chamber qualification yet</li>
+        <li>Not a primary or backup instrument: never base a diving decision on it</li>
+        <li>Not a finished product — this is a development beta for divers who want to help test</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Built like an instrument, labelled like a beta</h2>
+  <div class="card">
+    <ul>
+      <li>179 automated tests, including cross-checks against published Bühlmann table values</li>
+      <li>Requirements specification with full traceability — written as the input for a future conformity assessment</li>
+      <li>Honest-values design: the display shows only what the pipeline measures; after any fault it falls back to the conservative state and says so — including an explicit "do not trust" instead of a guess</li>
+      <li>Developed by a certified diver and software engineer with ten years of automotive functional-safety background (ASIL-B release responsibility)</li>
+      <li>Staged wet-test protocol: bench → pool (field-verified) → confined water → guided recreational dives, always next to a certified reference computer</li>
+    </ul>
+  </div>
+
+  <h2>Example screens</h2>
+  <div class="screens">
+    <figure><img src="assets/screens/ready.png" alt="READY screen with gas, gradient factors and sensor limit"><figcaption>Pre-dive: gas, GF, sensor limit — and the disclaimer</figcaption></figure>
+    <figure><img src="assets/screens/dive-air.png" alt="Dive screen showing depth and no-deco limit"><figcaption>In the dive: depth rules the screen</figcaption></figure>
+    <figure><img src="assets/screens/deco.png" alt="Decompression screen with first stop and time to surface"><figcaption>Deco: first stop and time-to-surface</figcaption></figure>
+    <figure><img src="assets/screens/violation.png" alt="Warning takeover instructing to ascend"><figcaption>Warnings take the whole screen — with haptics</figcaption></figure>
+    <figure><img src="assets/screens/tissues.png" alt="Tissue saturation view"><figcaption>Tissue loading, compartment by compartment</figcaption></figure>
+    <figure><img src="assets/screens/demo.png" alt="Demo dive with DEMO badge"><figcaption>Demo dives: try a full deco dive on land</figcaption></figure>
+    <figure><img src="assets/screens/manual.png" alt="Manual page with QR code"><figcaption>Built-in manual — QR opens it on the phone</figcaption></figure>
+  </div>
+
+  <h2>The road to a real dive computer</h2>
+  <div class="card road">
+    <p>WatchDiver can only call itself a dive computer after an accredited
+    <strong>EN&nbsp;13319 conformity assessment</strong>, pressure-chamber and open-water
+    validation, and Apple's distribution approval for the full 40&nbsp;m depth API.
+    That path is real engineering and real money — and it is the plan.</p>
+    <p>Until then, every build says what it is: a secondary display.</p>
+  </div>
+
+  <h2>Get involved</h2>
+  <div class="cols">
+    <div class="card">
+      <h3>Dive the beta</h3>
+      <p>You dive an Apple&nbsp;Watch&nbsp;Ultra? Test WatchDiver as a secondary display
+      next to your certified computer and tell us what you see — every structured
+      debrief makes the instrument better.</p>
+      <div class="cta-row"><a class="btn primary" href="https://github.com/mschmid/watchdiver/issues/new?labels=beta&amp;title=Beta+access+request&amp;body=I+dive+an+Apple+Watch+Ultra+and+want+to+test+WatchDiver+as+a+secondary+display.%0A%0AMy+certification+level+and+typical+diving:">Request beta access</a></div>
+    </div>
+    <div class="card">
+      <h3>Back the certification path</h3>
+      <p>You bring EN&nbsp;13319 or dive-instrument experience, run a dive school or a
+      test lab — or you want the finished dive computer to exist and are willing to
+      support it as a future customer? Let's talk.</p>
+      <div class="cta-row"><a class="btn secondary" href="https://github.com/mschmid/watchdiver/issues/new?labels=support&amp;title=I+want+to+support+WatchDiver&amp;body=How+I+can+help+(know-how+%2F+validation+%2F+funding):">Offer support</a></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>WatchDiver is an independent project by Matthias Schmid. Not affiliated with Apple Inc.;
+    Apple&nbsp;Watch is a trademark of Apple Inc. Screens shown are simulator captures of the
+    current development build.</p>
+    <p><a href="manual/">Manual</a></p>
+  </footer>
+</main>
+</body>
+</html>
