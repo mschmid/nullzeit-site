@@ -8,9 +8,19 @@ title: WatchDiver Manual
 
 ## Read me first
 
+<img src="../assets/screens/ready.png" alt="READY screen with gas, gradient factors, sensor limit and the secondary-display disclaimer" width="240">
+
+*Pre-dive READY screen — the disclaimer is always visible.*
+
+
 WatchDiver is a SECONDARY DISPLAY, not a certified dive computer (no EN 13319, no redundancy). Always dive with an independent, certified dive computer and follow it and your training. If the two displays disagree, the certified computer wins — every time. Test each build with a demo dive (“Try it”, below) on land before taking it near water.
 
 ## The five pages
+
+<img src="../assets/screens/tissues.png" alt="Tissue saturation page with compartment bars and M-value line" width="240">
+
+*The Tissues page: compartment loading against the M-value line.*
+
 
 Turn the Digital Crown to change pages. Underwater the touchscreen is water-locked; everything is readable by glance, nothing needs a tap. The ring shows only pages that currently mean something: while diving (armed or submerged) it is Dive and Tissues; at the surface, Settings and Manual are always there, the Logbook joins once it holds a dive, and Tissues stays visible while your tissues carry loading from a dive.
 
@@ -40,6 +50,11 @@ Press DIVE on the READY screen before entering the water — that is the determi
 
 ## Dive display, top to bottom
 
+<img src="../assets/screens/dive-air.png" alt="Dive display showing depth and the no-deco limit" width="240">
+
+*The dive display on air: depth rules the screen.*
+
+
 | Term | Meaning |
 |---|---|
 | **TEMP · DIVE · GAS** | Water temperature (°C), time since submerging (m:ss), breathing gas. |
@@ -51,6 +66,11 @@ Press DIVE on the READY screen before entering the water — that is the determi
 | **Operative card** | Exactly one instruction at a time: the NDL countdown, or the first deco stop, or a red directive — never two at once. |
 
 ## Screens and colours
+
+<img src="../assets/screens/deco.png" alt="Decompression screen with amber accents, first stop and time to surface" width="240">
+
+*Deco: amber state, first stop and time-to-surface.*
+
 
 Colour is never the only signal — every state also changes its text. Teal = fine, amber = caution, red = act now. The background tints with depth and floods amber/red with severity.
 
@@ -78,6 +98,11 @@ Three levels, matching the colours:
 | **Success pattern** | Safety stop completed — clear to surface (advisory). |
 
 ## Warnings and honesty
+
+<img src="../assets/screens/violation.png" alt="Red ABOVE STOP - DESCEND directive during a stop violation" width="240">
+
+*A stop violation: the red directive names the action.*
+
 
 A visible failure beats a plausible wrong number. These lines can appear at the bottom of the dive display or on READY:
 
@@ -130,6 +155,11 @@ WatchDiver can live on your watch face (add it like any complication when editin
 
 ## Demo dives (Try it)
 
+<img src="../assets/screens/demo.png" alt="Demo dive with the DEMO x60 badge" width="240">
+
+*A demo dive — the DEMO badge stays visible throughout.*
+
+
 Both demos run on a separate, sandboxed model — your real tissue state, logbook and recovery snapshot stay untouched, guaranteed. The display is the production dive screen, and the vibrations are real: learning the haptic vocabulary is the point. Never start a demo in the water.
 
 | Term | Meaning |
@@ -140,5 +170,5 @@ Both demos run on a separate, sandboxed model — your real tissue state, logboo
 
 ## The model, in one breath
 
-Bühlmann ZH-L16C with gradient factors (Erik Baker): 16 theoretical nitrogen compartments load and unload exponentially; the display warns when the most loaded one approaches its tolerated limit. It models an average body — it knows nothing about cold, exertion, dehydration or your physiology. That is one of the reasons this app must stay a secondary display.
+Bühlmann ZH-L16C with gradient factors (Erik Baker): 16 theoretical nitrogen compartments load and unload exponentially; the display warns when the most loaded one approaches its tolerated limit. Like every dive computer, it assumes average body conditions — cold, exertion, dehydration and personal physiology are not measured; dive conservatively when they apply.
 
