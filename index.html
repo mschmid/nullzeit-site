@@ -6,6 +6,22 @@
 <title>WatchDiver — a dive secondary display for the Apple Watch Ultra</title>
 <meta name="description" content="WatchDiver turns the Apple Watch Ultra into a decompression secondary display — not a certified dive computer. Test the beta, support the certification path.">
 <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+<link rel="alternate" hreflang="en" href="https://mschmid.github.io/watchdiver/">
+<link rel="alternate" hreflang="de" href="https://mschmid.github.io/watchdiver/de/">
+<link rel="alternate" hreflang="x-default" href="https://mschmid.github.io/watchdiver/">
+<script>
+  // One-time convenience redirect for German browsers; the choice sticks in
+  // localStorage, and the DE/EN toggle always wins over the automatism.
+  (function () {
+    try {
+      if (!localStorage.getItem("wd-lang") &&
+          (navigator.language || "").toLowerCase().indexOf("de") === 0) {
+        localStorage.setItem("wd-lang", "de");
+        location.replace("de/");
+      }
+    } catch (e) { /* private mode etc. — stay on English */ }
+  })();
+</script>
 <style>
   :root {
     --bg: #0b0f14; --card: #141b23; --ink: #e8edf2; --dim: #93a1b0;
@@ -34,6 +50,11 @@
   @media (min-width: 640px) { .hero-grid { grid-template-columns: 3fr 2fr; } }
   .brand { display: flex; align-items: center; gap: 16px; }
   .brand .logo { width: 58px; height: 58px; flex: none; }
+  a.lang {
+    margin-left: auto; align-self: flex-start; border: 1px solid #2a3642;
+    border-radius: 999px; padding: 3px 12px; color: var(--dim);
+    text-decoration: none; font-size: .9rem;
+  }
   .hero-watch img { display: block; margin: 0 auto; width: auto; max-width: 100%; max-height: 460px; }
   .cols { display: grid; gap: 16px; grid-template-columns: 1fr; margin-top: 12px; }
   @media (min-width: 640px) { .cols { grid-template-columns: 1fr 1fr; } }
@@ -75,6 +96,7 @@
         <div class="brand">
           <img src="assets/icon.svg" alt="WatchDiver logo" class="logo">
           <h1>WatchDiver</h1>
+          <a class="lang" href="de/" onclick="localStorage.setItem('wd-lang','de')">DE</a>
         </div>
         <p class="tagline">A decompression secondary display for the Apple&nbsp;Watch&nbsp;Ultra.</p>
         <div class="badge">Not a certified dive computer — a secondary display.</div>
@@ -170,7 +192,7 @@
     Apple&nbsp;Watch is a trademark of Apple Inc. Screens shown are simulator captures of the
     current development build; the device image uses Apple's official product bezel
     (Apple Design Resources).</p>
-    <p><a href="manual/">Manual</a> · <a href="imprint/">Imprint</a></p>
+    <p><a href="manual/">Manual</a> · <a href="imprint/">Imprint</a> · <a href="de/" onclick="localStorage.setItem('wd-lang','de')">Deutsche Version</a></p>
   </footer>
 </main>
 </body>
