@@ -107,7 +107,7 @@ Colour is never the only signal — every state also changes its text. Teal = fi
 
 | Term | Meaning |
 |---|---|
-| **READY** | At the surface, before a dive: gas, GF, sensor limit, plus the DIVE button (demo dives live on the Manual page). The teal GAS and GF cells open their setting directly; LIMIT is the sensor's statement, not a choice. Notices (restored tissue state, no-fly) appear here. |
+| **READY** | At the surface, before a dive: gas, GF, sensor limit, plus the DIVE button (demo dives live on the Manual page). The teal GAS and GF cells open their setting directly; LIMIT is the sensor's statement, not a choice. Notices (restored tissue state, no-fly, low battery) appear here. |
 | **Teal depth** | Inside the NDL, comfortably. Nothing to do but enjoy. |
 | **▲ ASCEND SOON (amber)** | NDL at or below 5 min: begin the ascent soon or accept a deco obligation. |
 | **DECOMPRESSION (amber badge)** | Direct ascent no longer allowed. The card shows the first stop (depth · minutes) and TTS. Ascend to the stop, never above it. |
@@ -124,9 +124,9 @@ Three levels, matching the colours:
 
 | Term | Meaning |
 |---|---|
-| **Single tap** | Caution: NDL warning reached, or approaching the sensor depth limit. |
+| **Single tap** | Caution: NDL warning reached, approaching the sensor depth limit, or the battery has dropped below 20 % while diving. |
 | **Distinct prompt** | State change into mandatory decompression. |
-| **Strong, repeating buzz** | Act now — above a mandatory stop, ascending too fast, past the sensor limit, past the gas's MOD, or the depth sensor has gone silent (NO DATA). It repeats until the situation is corrected. |
+| **Strong, repeating buzz** | Act now — above a mandatory stop, ascending too fast, past the sensor limit, past the gas's MOD, the depth sensor has gone silent (NO DATA), or the battery has dropped below 10 % while diving (BATTERY CRITICAL). It repeats until the situation is corrected. |
 | **Success pattern** | Safety stop completed — clear to surface (advisory). |
 
 ## Warnings and honesty
@@ -141,6 +141,9 @@ A visible failure beats a plausible wrong number. These lines can appear at the 
 | **Tissue loading restored…** | The app was restarted and resumed the saved tissue state, off-gassed across the gap. Normal after closing the app between dives. |
 | **Restored after an interrupted dive — estimate degraded** | The app went down mid-dive; the gap was bridged conservatively by assumption. Trust only the certified computer for the rest of the day. |
 | **Depth sensor fault** | The watch itself flagged its depth reading as unreliable. The display can no longer be trusted for this dive. |
+| **BATTERY x% — recommended ≥ 80%** | Pre-dive READY-screen check: the watch's charge is below the recommended minimum before entering the water. A standalone instrument that runs out of power loses the whole display, not just a convenience feature. |
+| **LOW BATTERY x%** | Watch battery below 20 % while diving — advisory. Start planning the ascent with margin. |
+| **BATTERY CRITICAL x%** | Watch battery below 10 % while diving — surface while there is still power to do so. Repeats every minute until you recharge. |
 
 ## Abbreviations
 
