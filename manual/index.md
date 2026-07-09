@@ -10,6 +10,7 @@ title: Nullzeit Manual
 
 <p align="center"><img src="../assets/screens/ready.png?v=3" alt="READY screen with gas, gradient factors, sensor limit and the secondary-display disclaimer" width="240"><br><em>Pre-dive READY screen — the disclaimer is always visible.</em></p>
 
+
 Nullzeit is a SECONDARY DISPLAY, not a certified dive computer (no EN 13319, no redundancy). Always dive with an independent, certified dive computer and follow it and your training. If the two displays disagree, the certified computer wins — every time. Test each build with a demo dive (“Try it on land”, below) on land before taking it near water.
 
 ## Get it on your wrist
@@ -30,6 +31,7 @@ Press DIVE on the READY screen before entering the water — that is the determi
 ## Try it on land
 
 <p align="center"><img src="../assets/screens/demo.png?v=3" alt="Demo dive with the DEMO x60 badge" width="240"><br><em>A demo dive — the DEMO badge stays visible throughout.</em></p>
+
 
 Both demos run on a separate, sandboxed model — your real tissue state, logbook and recovery snapshot stay untouched, guaranteed. The display is the production dive screen, and the vibrations are real: learning the haptic vocabulary is the point. Never start a demo in the water.
 
@@ -55,11 +57,13 @@ Breathing compressed gas under pressure dissolves nitrogen into your tissues. Su
 
 <p align="center"><img src="../assets/screens/tissues.png?v=3" alt="Tissue saturation page with compartment bars and M-value line" width="240"><br><em>The Tissues page: compartment loading against the M-value line.</em></p>
 
+
 Bühlmann ZH-L16C with gradient factors (Erik Baker): 16 theoretical nitrogen compartments load and unload exponentially; the display warns when the most loaded one approaches its tolerated limit. Like every dive computer, it assumes average body conditions — cold, exertion, dehydration and personal physiology are not measured; dive conservatively when they apply.
 
 ## The five pages
 
 <p align="center"><img src="../assets/screens/dive-air.png?v=3" alt="Dive page showing water temperature, dive time, depth and the no-deco limit" width="240"><br><em>Page 1, the dive display: depth rules the screen.</em></p>
+
 
 Turn the Digital Crown to change pages. Underwater the touchscreen is water-locked; everything is readable by glance, nothing needs a tap. The ring shows only pages that currently mean something: while diving (armed or submerged) it is Dive and Tissues; at the surface, Settings and Manual are always there, the Logbook joins once it holds a dive, and Tissues stays visible while your tissues carry loading from a dive.
 
@@ -75,6 +79,7 @@ Turn the Digital Crown to change pages. Underwater the touchscreen is water-lock
 
 <p align="center"><img src="../assets/screens/deco.png?v=3" alt="Decompression screen with temperature, dive time, depth, GF, ceiling, first stop and time to surface" width="240"><br><em>All elements populated: a dive in decompression.</em></p>
 
+
 | Term | Meaning |
 |---|---|
 | **TEMP · DIVE** | Water temperature (°C) and time since submerging (m:ss). On nitrox, a GAS column joins them — on air it stays out of the way. |
@@ -89,7 +94,9 @@ Turn the Digital Crown to change pages. Underwater the touchscreen is water-lock
 
 <p align="center"><img src="../assets/screens/violation.png?v=3" alt="Red ABOVE STOP - DESCEND directive during a stop violation" width="240"><br><em>A stop violation: the red directive names the action.</em></p>
 
+
 <p align="center"><img src="../assets/screens/slow.png?v=3" alt="SLOW - ASCENT TOO FAST takeover showing 15 m/min against 10 max safe" width="240"><br><em>Ascending too fast: SLOW with the live rate against the safe maximum.</em></p>
+
 
 Colour is never the only signal — every state also changes its text. Teal = fine, amber = caution, red = act now. The background tints with depth and floods amber/red with severity.
 

@@ -33,12 +33,12 @@ IMAGES = {
 }
 
 FRONT = """---
-title: WatchDiver Manual
+title: Nullzeit Manual
 ---
 
 """
 
-MIRROR_NOTE = "> Mirror of the WatchDiver in-app Manual page — generated from the app sources (`swift run generate-manual`), published for reading on the phone via the QR code on the watch. [← watchdiver home](../)"
+MIRROR_NOTE = "> Mirror of the Nullzeit in-app Manual page — generated from the app sources (`swift run generate-manual`), published for reading on the phone via the QR code on the watch. [← nullzeit home](../)"
 
 
 def figure(filename, alt, caption):
