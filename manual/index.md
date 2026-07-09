@@ -141,7 +141,7 @@ A visible failure beats a plausible wrong number. These lines can appear at the 
 | **Tissue loading restored…** | The app was restarted and resumed the saved tissue state, off-gassed across the gap. Normal after closing the app between dives. |
 | **Restored after an interrupted dive — estimate degraded** | The app went down mid-dive; the gap was bridged conservatively by assumption. Trust only the certified computer for the rest of the day. |
 | **Depth sensor fault** | The watch itself flagged its depth reading as unreliable. The display can no longer be trusted for this dive. |
-| **BATTERY x% — recommended ≥ 80%** | Pre-dive READY-screen check: the watch's charge is below the recommended minimum before entering the water. A standalone instrument that runs out of power loses the whole display, not just a convenience feature. |
+| **BAT (GOOD / LOW / CRIT)** | Pre-dive battery cell on the READY screen, next to GAS/GF/LIMIT: GOOD at 80 % or more (the recommended charge before a dive), LOW below that, CRIT below 20 %. A standalone instrument that runs out of power loses the whole display, not just a convenience feature — charge to GOOD before entering the water. |
 | **LOW BATTERY x%** | Watch battery below 20 % while diving — advisory. Start planning the ascent with margin. |
 | **BATTERY CRITICAL x%** | Watch battery below 10 % while diving — surface while there is still power to do so. Repeats every minute until you recharge. |
 
