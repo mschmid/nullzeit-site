@@ -114,6 +114,7 @@ Colour is never the only signal — every state also changes its text. Teal = fi
 | **▼ ABOVE STOP — DESCEND (red)** | You are shallower than a mandatory stop: descend below the stop depth immediately. Pulsing red background, repeating strong buzz. |
 | **SLOW — ASCENT TOO FAST** | Ascending faster than 12 m/min. Full-screen takeover: slow down until it disappears (target ≤ 10 m/min). |
 | **ASCEND — PAST SENSOR LIMIT** | At/past the sensor's maximum depth. Depth data is unreliable from here — ascend. Warned in amber from 90 % of the limit (“NEAR x m SENSOR LIMIT”). |
+| **NO DATA (red)** | The depth sensor has stopped delivering readings while submerged. Every value on screen is frozen, not live — treat it as unreliable and consult a backup gauge or computer. Clears the moment a fresh reading arrives. |
 | **SAFETY STOP ring** | Advisory 3-min hold at 5 m after dives beyond 10 m. The ring shows the countdown and your live depth — hold it near 5 m. A mandatory deco stop always wins the screen; after a deco dive the countdown starts once the last mandatory stop is cleared (do the safety stop anyway — recommended practice). Success buzz when done. |
 | **Dive Log** | After surfacing: profile sparkline, max depth, dive time, min temperature, end GF, running surface interval, and the no-fly estimate. |
 
@@ -125,7 +126,7 @@ Three levels, matching the colours:
 |---|---|
 | **Single tap** | Caution: NDL warning reached, or approaching the sensor depth limit. |
 | **Distinct prompt** | State change into mandatory decompression. |
-| **Strong, repeating buzz** | Act now — above a mandatory stop, ascending too fast, or past the sensor limit. It repeats until the situation is corrected. |
+| **Strong, repeating buzz** | Act now — above a mandatory stop, ascending too fast, past the sensor limit, past the gas's MOD, or the depth sensor has gone silent (NO DATA). It repeats until the situation is corrected. |
 | **Success pattern** | Safety stop completed — clear to surface (advisory). |
 
 ## Warnings and honesty
