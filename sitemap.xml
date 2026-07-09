@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://nullzeit.app/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nullzeit.app/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nullzeit.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nullzeit.app/"/>
+  </url>
+  <url>
+    <loc>https://nullzeit.app/de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nullzeit.app/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nullzeit.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nullzeit.app/"/>
+  </url>
+  <url>
+    <loc>https://nullzeit.app/manual/</loc>
+  </url>
+  <url>
+    <loc>https://nullzeit.app/imprint/</loc>
+  </url>
+  <url>
+    <loc>https://nullzeit.app/privacy/</loc>
+  </url>
+</urlset>

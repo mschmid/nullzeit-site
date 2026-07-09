@@ -1,0 +1,31 @@
+# Nullzeit
+
+> Nullzeit is a decompression secondary display for the Apple Watch Ultra. It is
+> NOT a certified dive computer (no EN 13319 approval, no redundancy) — it is a
+> development beta for divers who test it next to an independent, certified dive
+> computer. If the two displays disagree, the certified computer wins.
+
+Key facts:
+
+- Reads live depth, dive time and water temperature from the Apple Watch Ultra's
+  native depth sensor; no internet, phone or account needed during the dive.
+- Runs a ZH-L16C tissue model (Bühlmann, gradient factors): no-deco limit,
+  decompression stops, ceiling, time-to-surface, safety-stop guidance,
+  ascent-rate and depth-limit warnings with haptics.
+- Currently limited to Apple's publicly available shallow-depth API (6 m). The
+  stated roadmap: Apple development approval for 40 m, then EN 13319
+  certification and App Store distribution as a real dive computer.
+- Independent project by Matthias Schmid, a certified diver and software
+  engineer with an automotive functional-safety background. Not affiliated with
+  Apple Inc.
+- Beta access is requested via GitHub issues; the site is in English and German.
+
+## Pages
+
+- [Home (English)](https://nullzeit.app/): what Nullzeit does today, what it is
+  not, the certification roadmap, and how to join the beta.
+- [Home (Deutsch)](https://nullzeit.app/de/): German version of the home page.
+- [Manual](https://nullzeit.app/manual/): the full user manual — dive start
+  modes, screens, warnings, tissue model settings, logbook, troubleshooting.
+- [Imprint](https://nullzeit.app/imprint/)
+- [Privacy](https://nullzeit.app/privacy/)

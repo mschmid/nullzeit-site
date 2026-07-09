@@ -34,6 +34,11 @@ IMAGES = {
 
 FRONT = """---
 title: Nullzeit Manual
+description: >-
+  The full Nullzeit user manual — dive start modes, screens and warnings,
+  the ZH-L16C tissue model and gradient factors, logbook, and troubleshooting
+  on the Apple Watch Ultra.
+image: /assets/og-image.png
 ---
 
 """

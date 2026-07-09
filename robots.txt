@@ -1,0 +1,7 @@
+# All crawlers welcome — including AI crawlers (GPTBot, ClaudeBot,
+# PerplexityBot, Google-Extended, ...): being readable by answer engines
+# is part of this site's job.
+User-agent: *
+Allow: /
+
+Sitemap: https://nullzeit.app/sitemap.xml
