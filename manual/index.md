@@ -13,7 +13,7 @@ image: /assets/og-image.png
 
 ## Read me first
 
-<p align="center"><img src="../assets/screens/ready.png?v=3" alt="READY screen with gas, gradient factors, sensor limit and the secondary-display disclaimer" width="240"><br><em>Pre-dive READY screen — the disclaimer is always visible.</em></p>
+<p align="center"><img src="../assets/screens/ready.png?v=3" alt="READY screen with gas and sensor limit, the Dive button and the secondary-display disclaimer" width="240"><br><em>Pre-dive READY screen — the disclaimer is always visible.</em></p>
 
 
 Nullzeit is a SECONDARY DISPLAY, not a certified dive computer (no EN 13319, no redundancy). Always dive with an independent, certified dive computer and follow it and your training. If the two displays disagree, the certified computer wins — every time. Test each build with a demo dive (“Try it on land”, below) on land before taking it near water.
@@ -83,6 +83,9 @@ Turn the Digital Crown to change pages. Underwater the touchscreen is water-lock
 
 ## Planner
 
+<p align="center"><img src="../assets/screens/planner.png?v=3" alt="No-deco planner listing the no-stop time at a range of depths" width="240"><br><em>The surface planner: no-stop time by depth, from your current tissue loading.</em></p>
+
+
 The Planner (crown page 4, at the surface) answers one question before you get wet: how much no-stop time do I have at each depth, right now? It plans from your live tissue loading, so on a repetitive dive the times are already shortened — exactly as your dive would be. Scroll the depth list with the Digital Crown. It is a planning aid only: your certified computer still leads the dive.
 
 | Term | Meaning |
@@ -115,6 +118,9 @@ The Planner (crown page 4, at the surface) answers one question before you get w
 
 
 <p align="center"><img src="../assets/screens/slow.png?v=3" alt="SLOW - ASCENT TOO FAST takeover showing 15 m/min against 10 max safe" width="240"><br><em>Ascending too fast: SLOW with the live rate against the safe maximum.</em></p>
+
+
+<p align="center"><img src="../assets/screens/night.png?v=3" alt="Night mode: the dive display in a dim red monochrome palette" width="240"><br><em>Night mode: a dim red palette that keeps your dark adaptation.</em></p>
 
 
 Colour is never the only signal — every state also changes its text. Teal = fine, amber = caution, red = act now. The background tints with depth and floods amber/red with severity. Night mode (Settings) drops colour altogether for a dark-adaptation-friendly dim red display — then the text and vibrations are the whole signal, which is exactly why they always carry it.

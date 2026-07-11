@@ -12,10 +12,13 @@ import sys, re, pathlib
 # section heading -> list of (image file, alt text, caption)
 IMAGES = {
     "Read me first": [
-        ("ready.png", "READY screen with gas, gradient factors, sensor limit and the secondary-display disclaimer", "Pre-dive READY screen — the disclaimer is always visible."),
+        ("ready.png", "READY screen with gas and sensor limit, the Dive button and the secondary-display disclaimer", "Pre-dive READY screen — the disclaimer is always visible."),
     ],
     "The six pages": [
         ("dive-air.png", "Dive page showing water temperature, dive time, depth and the no-deco limit", "Page 1, the dive display: depth rules the screen."),
+    ],
+    "Planner": [
+        ("planner.png", "No-deco planner listing the no-stop time at a range of depths", "The surface planner: no-stop time by depth, from your current tissue loading."),
     ],
     "Dive display, top to bottom": [
         ("deco.png", "Decompression screen with temperature, dive time, depth, GF, ceiling, first stop and time to surface", "All elements populated: a dive in decompression."),
@@ -23,6 +26,7 @@ IMAGES = {
     "Screens and colours": [
         ("violation.png", "Red ABOVE STOP - DESCEND directive during a stop violation", "A stop violation: the red directive names the action."),
         ("slow.png", "SLOW - ASCENT TOO FAST takeover showing 15 m/min against 10 max safe", "Ascending too fast: SLOW with the live rate against the safe maximum."),
+        ("night.png", "Night mode: the dive display in a dim red monochrome palette", "Night mode: a dim red palette that keeps your dark adaptation."),
     ],
     "Try it on land": [
         ("demo.png", "Demo dive with the DEMO x60 badge", "A demo dive — the DEMO badge stays visible throughout."),
