@@ -99,11 +99,14 @@
   a.btn.secondary { border: 1.5px solid var(--ok); color: var(--ok); }
   a { color: var(--ok); }
   .road { border-left: 3px solid var(--warn); }
+  .hero-watch img { height: auto; }
   footer {
     border-top: 1px solid #1d2630; margin-top: 56px; padding-top: 18px;
     color: var(--dim); font-size: .88rem;
   }
 </style>
+<link rel="stylesheet" href="../assets/demo-dive.css">
+<script src="../assets/demo-dive.js" defer></script>
 <!-- GoatCounter: cookieloser Seitenzaehler, siehe /privacy/ -->
 <script data-goatcounter="https://nullzeit.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
@@ -129,7 +132,10 @@
         </div>
       </div>
       <div class="hero-watch">
-        <img src="../assets/watch-ultra3-deco.png?v=3" alt="Apple Watch Ultra 3 mit Ocean Band zeigt die Nullzeit-Dekompressionsanzeige: 33 m Tiefe, erster Stop 3 m für 2 Minuten">
+        <picture>
+          <source type="image/webp" srcset="../assets/watch-ultra3-deco.webp">
+          <img src="../assets/watch-ultra3-deco.png?v=3" width="577" height="920" fetchpriority="high" decoding="async" alt="Apple Watch Ultra 3 mit Ocean Band zeigt die Nullzeit-Dekompressionsanzeige: 33 m Tiefe, erster Stop 3 m für 2 Minuten">
+        </picture>
       </div>
     </div>
   </section>
@@ -184,19 +190,68 @@
     </ul>
   </div>
 
+  <h2>Sieh ihr beim Tauchen zu</h2>
+  <div class="cols demo-cols">
+    <div class="card">
+      <h3>Der Guided-Demo-Tauchgang, nachgebaut in HTML</h3>
+      <p>Kein Video, kein GIF — die Animation ist die Seite selbst: ein HTML-Nachbau des
+      Guided-Demo-Tauchgangs der App, ein kompletter 30-m-Dekotauchgang in ×60, dasselbe
+      Skript, das die Uhr freihändig abspielt. Abstieg, Nullzeit-Countdown, das
+      amberfarbene DECOMPRESSION-Badge, die Stops auf 6&nbsp;m und 3&nbsp;m, der
+      Sicherheitsstopp, die Oberfläche.</p>
+      <p>Wie jede Demo in Nullzeit trägt sie durchgehend das DEMO-×60-Badge — ein
+      Demo-Screen kann nie mit einem echten Tauchgang verwechselt werden. Die Werte hier
+      sind fürs Web angenähert; auf der Uhr rechnet die Demo mit dem echten
+      ZH-L16C-Modell, und eine interaktive Demo legt die Tiefe auf die
+      Digitale&nbsp;Krone.</p>
+    </div>
+    <div class="dd-wrap">
+      <div class="dd-watch deco" id="demo-dive">
+        <div class="dd-bg"></div><div class="dd-bg-warm"></div>
+        <div class="dd-face" role="img" aria-label="Animierter Nachbau des Guided-Demo-Tauchgangs: Abstieg auf 30 m, Nullzeit-Countdown, Dekostops auf 6 m und 3 m, Sicherheitsstopp, Oberfläche — durchgehend mit dem DEMO-×60-Badge.">
+          <div class="dd-demoband"><span class="dd-demopill">DEMO ×60</span></div>
+          <div class="dd-toprow">
+            <div class="dd-cell"><span class="dd-num">27°</span><span class="dd-lab">TEMP</span></div>
+            <div class="dd-cell r"><span class="dd-num" id="dd-time">16:00</span><span class="dd-lab">DIVE</span></div>
+          </div>
+          <div class="dd-badgerow"><span class="dd-badge on" id="dd-badge">DECOMPRESSION</span></div>
+          <div class="dd-depthrow"><span class="dd-depth warn" id="dd-depth">30.0</span><span class="dd-unit">m</span></div>
+          <div class="dd-lab c">DEPTH</div>
+          <div class="dd-stats" id="dd-stats">MAX 30.0 GF 118% CEIL 4.5</div>
+          <div class="dd-card" id="dd-card-ndl" hidden>
+            <div class="dd-col"><span class="dd-clab">NO-DECO LIMIT</span></div>
+            <div class="dd-cval ok big"><span id="dd-ndl">8</span><small>min</small></div>
+          </div>
+          <div class="dd-card" id="dd-card-deco">
+            <div class="dd-col"><span class="dd-clab">FIRST STOP</span><span class="dd-cval" id="dd-stop">6 m · 1 min</span></div>
+            <div class="dd-col r"><span class="dd-clab">TTS</span><span class="dd-cval warn"><span id="dd-tts">8</span><small>min</small></span></div>
+          </div>
+          <div class="dd-card" id="dd-card-safety" hidden>
+            <div class="dd-col"><span class="dd-clab">SAFETY STOP</span></div>
+            <div class="dd-cval ok" id="dd-safety">3 m · 1:00</div>
+          </div>
+          <div class="dd-card" id="dd-card-surface" hidden>
+            <div class="dd-col"><span class="dd-clab">SURFACED</span><span class="dd-surfsub">30.0 m · 25 min — logged</span></div>
+          </div>
+        </div>
+        <button class="dd-play" id="dd-play" type="button" hidden aria-label="Demo-Tauchgang-Animation abspielen"><span>▶</span></button>
+      </div>
+    </div>
+  </div>
+
   <h2>Beispiel-Screens</h2>
   <div class="screens">
-    <figure><img src="../assets/screens/ready.png?v=3" alt="READY-Screen mit Gas und Sensorlimit, dem Dive-Button und dem Secondary-Display-Disclaimer"><figcaption>Vor dem Tauchgang: Gas, Sensorlimit — und der Disclaimer</figcaption></figure>
-    <figure><img src="../assets/screens/dive-air.png?v=3" alt="Tauchanzeige mit Tiefe und Nullzeit"><figcaption>Im Tauchgang: die Tiefe beherrscht den Screen</figcaption></figure>
-    <figure><img src="../assets/screens/night.png?v=3" alt="Nachtmodus: die Tauchanzeige in gedämpftem rotem Monochrom"><figcaption>Nachtmodus: gedämpftes Rot, schont die Dunkeladaption</figcaption></figure>
-    <figure><img src="../assets/screens/deco.png?v=3" alt="Dekompressionsanzeige mit erstem Stop und Time-to-Surface"><figcaption>Deko: erster Stop und Time-to-Surface</figcaption></figure>
-    <figure><img src="../assets/screens/violation.png?v=3" alt="Rotes ABOVE-STOP-Direktiv mit Abtauch-Anweisung"><figcaption>Stop-Verletzung: das rote Direktiv benennt die Handlung</figcaption></figure>
-    <figure><img src="../assets/screens/slow.png?v=3" alt="SLOW-Warnung bei zu schnellem Aufstieg"><figcaption>Zu schnell aufgestiegen: SLOW, mit Ist-Rate gegen Maximum</figcaption></figure>
-    <figure><img src="../assets/screens/tissues.png?v=3" alt="Gewebesättigungs-Ansicht"><figcaption>Gewebesättigung, Kompartiment für Kompartiment</figcaption></figure>
-    <figure><img src="../assets/screens/logbook.png?v=3" alt="Logbuch mit Profil, Maximaltiefe, Tauchzeit, Minimaltemperatur und End-GF"><figcaption>Nach dem Tauchgang: Profil, Werte und No-Fly-Schätzung</figcaption></figure>
-    <figure><img src="../assets/screens/logdetail.png?v=3" alt="Logbuch-Detail mit einer Karte des Einstiegspunkts und den Einstiegskoordinaten"><figcaption>Logbuch-Detail: eine Karte, wo du eingestiegen bist</figcaption></figure>
-    <figure><img src="../assets/screens/planner.png?v=3" alt="Nullzeit-Planer mit No-Stop-Zeit über eine Reihe von Tiefen"><figcaption>Oberflächen-Planer: No-Stop-Zeit nach Tiefe, aus deinem aktuellen Gewebe</figcaption></figure>
-    <figure><img src="../assets/screens/manual.png?v=3" alt="Manual-Seite mit QR-Code"><figcaption>Eingebautes Manual — der QR-Code öffnet es am Handy</figcaption></figure>
+    <figure><img src="../assets/screens/ready.webp" width="422" height="514" loading="lazy" decoding="async" alt="READY-Screen mit Gas und Sensorlimit, dem Dive-Button und dem Secondary-Display-Disclaimer"><figcaption>Vor dem Tauchgang: Gas, Sensorlimit — und der Disclaimer</figcaption></figure>
+    <figure><img src="../assets/screens/dive-air.webp" width="422" height="514" loading="lazy" decoding="async" alt="Tauchanzeige mit Tiefe und Nullzeit"><figcaption>Im Tauchgang: die Tiefe beherrscht den Screen</figcaption></figure>
+    <figure><img src="../assets/screens/night.webp" width="422" height="514" loading="lazy" decoding="async" alt="Nachtmodus: die Tauchanzeige in gedämpftem rotem Monochrom"><figcaption>Nachtmodus: gedämpftes Rot, schont die Dunkeladaption</figcaption></figure>
+    <figure><img src="../assets/screens/deco.webp" width="422" height="514" loading="lazy" decoding="async" alt="Dekompressionsanzeige mit erstem Stop und Time-to-Surface"><figcaption>Deko: erster Stop und Time-to-Surface</figcaption></figure>
+    <figure><img src="../assets/screens/violation.webp" width="422" height="514" loading="lazy" decoding="async" alt="Rotes ABOVE-STOP-Direktiv mit Abtauch-Anweisung"><figcaption>Stop-Verletzung: das rote Direktiv benennt die Handlung</figcaption></figure>
+    <figure><img src="../assets/screens/slow.webp" width="422" height="514" loading="lazy" decoding="async" alt="SLOW-Warnung bei zu schnellem Aufstieg"><figcaption>Zu schnell aufgestiegen: SLOW, mit Ist-Rate gegen Maximum</figcaption></figure>
+    <figure><img src="../assets/screens/tissues.webp" width="422" height="514" loading="lazy" decoding="async" alt="Gewebesättigungs-Ansicht"><figcaption>Gewebesättigung, Kompartiment für Kompartiment</figcaption></figure>
+    <figure><img src="../assets/screens/logbook.webp" width="422" height="514" loading="lazy" decoding="async" alt="Logbuch mit Profil, Maximaltiefe, Tauchzeit, Minimaltemperatur und End-GF"><figcaption>Nach dem Tauchgang: Profil, Werte und No-Fly-Schätzung</figcaption></figure>
+    <figure><img src="../assets/screens/logdetail.webp" width="422" height="514" loading="lazy" decoding="async" alt="Logbuch-Detail mit einer Karte des Einstiegspunkts und den Einstiegskoordinaten"><figcaption>Logbuch-Detail: eine Karte, wo du eingestiegen bist</figcaption></figure>
+    <figure><img src="../assets/screens/planner.webp" width="422" height="514" loading="lazy" decoding="async" alt="Nullzeit-Planer mit No-Stop-Zeit über eine Reihe von Tiefen"><figcaption>Oberflächen-Planer: No-Stop-Zeit nach Tiefe, aus deinem aktuellen Gewebe</figcaption></figure>
+    <figure><img src="../assets/screens/manual.webp" width="422" height="514" loading="lazy" decoding="async" alt="Manual-Seite mit QR-Code"><figcaption>Eingebautes Manual — der QR-Code öffnet es am Handy</figcaption></figure>
   </div>
 
   <h2>Der Weg zum echten Tauchcomputer</h2>
@@ -233,7 +288,9 @@
     <p>Nullzeit ist ein unabhängiges Projekt von Matthias Schmid. Nicht mit Apple Inc.
     verbunden; Apple&nbsp;Watch ist eine Marke von Apple Inc. Die gezeigten Screens sind
     Simulator-Aufnahmen des aktuellen Entwicklungsstands; das Gerätebild verwendet Apples
-    offizielles Produkt-Bezel (Apple Design Resources).</p>
+    offizielles Produkt-Bezel (Apple Design Resources). Der animierte Tauchgang ist ein
+    HTML-Nachbau des Guided-Demo-Tauchgangs mit angenäherten Werten, keine
+    Bildschirmaufnahme.</p>
     <p><a href="../manual/">Manual (englisch)</a> · <a href="../imprint/">Impressum</a> · <a href="../privacy/#de">Datenschutz</a> · <a href="../" onclick="localStorage.setItem('wd-lang','en')">English version</a></p>
   </footer>
 </main>
