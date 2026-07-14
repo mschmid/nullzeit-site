@@ -182,7 +182,7 @@
   <h2>Gebaut wie ein Instrument, gekennzeichnet als Beta</h2>
   <div class="card">
     <ul>
-      <li>275 automatisierte Tests, inklusive Gegenproben gegen publizierte Bühlmann-Tabellenwerte</li>
+      <li>288 automatisierte Tests, inklusive Gegenproben gegen publizierte Bühlmann-Tabellenwerte</li>
       <li>Anforderungsspezifikation mit vollständiger Traceability — geschrieben als Input für eine spätere Konformitätsbewertung</li>
       <li>Honest-Values-Design: Angezeigt wird nur, was die Pipeline misst; nach jedem Fehler fällt die App in den konservativen Zustand zurück und sagt es — bis hin zum expliziten „do not trust" statt einer Schätzung</li>
       <li>Entwickelt von einem zertifizierten Taucher und Software-Ingenieur mit zehn Jahren Functional-Safety-Hintergrund aus der Automobilindustrie (ASIL-B-Freigabeverantwortung)</li>
@@ -260,10 +260,24 @@
     <ul>
       <li><strong>Heute:</strong> eine nicht zertifizierte App mit Tiefenmessung bis 6&nbsp;m — Apples öffentlich verfügbare Shallow-Depth-API.</li>
       <li><strong>Nach Apples Entwicklungs-Genehmigung:</strong> eine nicht zertifizierte App bis 40&nbsp;m — nur für internes Testen und Validierung (Antrag eingereicht Juli 2026).</li>
-      <li><strong>Nach Apples Distributions-Genehmigung und der EN-13319-Zertifizierung:</strong> ein Tauchcomputer bis 40&nbsp;m, verkauft im App&nbsp;Store.</li>
+      <li><strong>Nach der EN-13319-Prüfung des Verbunds App&nbsp;+&nbsp;Uhr als ein Messsystem durch ein unabhängiges Labor und Apples Distributions-Genehmigung:</strong> ein Tauchcomputer bis 40&nbsp;m, verkauft im App&nbsp;Store — Tiefen- und Zeitmessung zertifiziert; was das abdeckt und was nicht, steht direkt darunter.</li>
     </ul>
     <p>Jede Stufe ist echtes Engineering, echte Validierung und echtes Geld — und sie ist der Plan.
     Bis dahin sagt jeder Build, was er ist: ein Secondary Display.</p>
+  </div>
+
+  <h2>Was „zertifiziert“ bedeuten wird — und was nicht</h2>
+  <div class="card">
+    <p>EN&nbsp;13319 ist eine Instrumentennorm: Zertifiziert wird die <strong>Messkette</strong> —
+    App und Uhr gemeinsam geprüft als ein Tiefen- und Zeitmessgerät, vom Sensor bis zur
+    Anzeige. Wenn Nullzeit dort ankommt, veröffentlichen wir das Zertifikat und seinen
+    genauen Prüfumfang.</p>
+    <p>Und was kein Zertifikat abdeckt, bei keinem Tauchcomputer der Welt: den
+    Dekompressions-Algorithmus. Für Deko-Software existiert keine Norm — jeder Hersteller
+    liefert sie in eigener Verantwortung. Unserer ist keine Ausnahme; also validieren wir
+    ihn nachprüfbar: ein dokumentierter Kern, dessen Test-Erwartungswerte aus einer
+    unabhängigen Zweitimplementierung derselben Gleichungen stammen — und wir sagen das,
+    statt „zertifiziert“ mehr bedeuten zu lassen, als es heißt.</p>
   </div>
 
   <h2>Mach mit</h2>

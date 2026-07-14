@@ -195,7 +195,7 @@
   <h2>Built like an instrument, labelled like a beta</h2>
   <div class="card">
     <ul>
-      <li>275 automated tests, including cross-checks against published Bühlmann table values</li>
+      <li>288 automated tests, including cross-checks against published Bühlmann table values</li>
       <li>Requirements specification with full traceability — written as the input for a future conformity assessment</li>
       <li>Honest-values design: the display shows only what the pipeline measures; after any fault it falls back to the conservative state and says so — including an explicit "do not trust" instead of a guess</li>
       <li>Developed by a certified diver and software engineer with ten years of automotive functional-safety background (ASIL-B release responsibility)</li>
@@ -272,10 +272,23 @@
     <ul>
       <li><strong>Today:</strong> an uncertified app reading depth to 6&nbsp;m — Apple's publicly available shallow-depth API.</li>
       <li><strong>After Apple's development approval:</strong> an uncertified app to 40&nbsp;m — internal testing and validation only (application filed July 2026).</li>
-      <li><strong>After Apple's distribution approval and EN&nbsp;13319 certification:</strong> a dive computer to 40&nbsp;m, sold in the App&nbsp;Store.</li>
+      <li><strong>After EN&nbsp;13319 certification of the app&nbsp;+&nbsp;watch as one measuring system by an independent lab, and Apple's distribution approval:</strong> a dive computer to 40&nbsp;m, sold in the App&nbsp;Store — depth and time measurement certified; what that does and doesn't cover is spelled out below.</li>
     </ul>
     <p>Every stage is real engineering, real validation and real money — and it is the plan.
     Until then, every build says what it is: a secondary display.</p>
+  </div>
+
+  <h2>What “certified” will mean — and what it won't</h2>
+  <div class="card">
+    <p>EN&nbsp;13319 is an instrument standard: what gets certified is the
+    <strong>measuring chain</strong> — app and watch tested together as one depth-and-time
+    instrument, from sensor to display. When Nullzeit gets there, we will publish the
+    certificate and its exact scope.</p>
+    <p>And what no certificate covers, on any dive computer in the world: the decompression
+    algorithm. No standard for deco software exists — every manufacturer ships it on its own
+    responsibility. Ours is no exception, so we validate it the verifiable way: a documented
+    core whose test expectations come from an independent second implementation of the same
+    equations — and we say so, instead of letting “certified” imply more than it means.</p>
   </div>
 
   <h2>Get involved</h2>
