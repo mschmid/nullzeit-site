@@ -112,11 +112,14 @@
   a.btn.secondary { border: 1.5px solid var(--ok); color: var(--ok); }
   a { color: var(--ok); }
   .road { border-left: 3px solid var(--warn); }
+  .hero-watch img { height: auto; }
   footer {
     border-top: 1px solid #1d2630; margin-top: 56px; padding-top: 18px;
     color: var(--dim); font-size: .88rem;
   }
 </style>
+<link rel="stylesheet" href="assets/demo-dive.css">
+<script src="assets/demo-dive.js" defer></script>
 <!-- GoatCounter: cookieloser Seitenzaehler, siehe /privacy/ -->
 <script data-goatcounter="https://nullzeit.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
@@ -142,7 +145,10 @@
         </div>
       </div>
       <div class="hero-watch">
-        <img src="assets/watch-ultra3-deco.png?v=3" alt="Apple Watch Ultra 3 with Ocean Band showing the Nullzeit decompression display: 33 m depth, first stop 3 m for 2 minutes, 5 minutes to surface">
+        <picture>
+          <source type="image/webp" srcset="assets/watch-ultra3-deco.webp">
+          <img src="assets/watch-ultra3-deco.png?v=3" width="577" height="920" fetchpriority="high" decoding="async" alt="Apple Watch Ultra 3 with Ocean Band showing the Nullzeit decompression display: 33 m depth, first stop 3 m for 2 minutes, 5 minutes to surface">
+        </picture>
       </div>
     </div>
   </section>
@@ -197,19 +203,67 @@
     </ul>
   </div>
 
+  <h2>Watch it dive</h2>
+  <div class="cols demo-cols">
+    <div class="card">
+      <h3>The guided demo dive, rebuilt in HTML</h3>
+      <p>No video, no GIF — the animation is the page itself: an HTML re-creation of the
+      app's guided demo dive, a complete 30&nbsp;m decompression dive at ×60, the same
+      script the watch plays hands-free. Descent, no-deco countdown, the amber
+      DECOMPRESSION badge, the stops at 6&nbsp;m and 3&nbsp;m, the safety stop, the
+      surface.</p>
+      <p>Like every demo in Nullzeit it wears the DEMO&nbsp;×60 badge the whole time — a
+      demo screen can never be mistaken for a live dive. The values here are approximated
+      for the web; on the watch the demo runs the real ZH-L16C model, and an interactive
+      demo puts the depth on the Digital&nbsp;Crown.</p>
+    </div>
+    <div class="dd-wrap">
+      <div class="dd-watch deco" id="demo-dive">
+        <div class="dd-bg"></div><div class="dd-bg-warm"></div>
+        <div class="dd-face" role="img" aria-label="Animated re-creation of the guided demo dive: descent to 30 m, no-deco countdown, decompression stops at 6 m and 3 m, safety stop, surface — wearing the DEMO ×60 badge throughout.">
+          <div class="dd-demoband"><span class="dd-demopill">DEMO ×60</span></div>
+          <div class="dd-toprow">
+            <div class="dd-cell"><span class="dd-num">27°</span><span class="dd-lab">TEMP</span></div>
+            <div class="dd-cell r"><span class="dd-num" id="dd-time">16:00</span><span class="dd-lab">DIVE</span></div>
+          </div>
+          <div class="dd-badgerow"><span class="dd-badge on" id="dd-badge">DECOMPRESSION</span></div>
+          <div class="dd-depthrow"><span class="dd-depth warn" id="dd-depth">30.0</span><span class="dd-unit">m</span></div>
+          <div class="dd-lab c">DEPTH</div>
+          <div class="dd-stats" id="dd-stats">MAX 30.0 GF 118% CEIL 4.5</div>
+          <div class="dd-card" id="dd-card-ndl" hidden>
+            <div class="dd-col"><span class="dd-clab">NO-DECO LIMIT</span></div>
+            <div class="dd-cval ok big"><span id="dd-ndl">8</span><small>min</small></div>
+          </div>
+          <div class="dd-card" id="dd-card-deco">
+            <div class="dd-col"><span class="dd-clab">FIRST STOP</span><span class="dd-cval" id="dd-stop">6 m · 1 min</span></div>
+            <div class="dd-col r"><span class="dd-clab">TTS</span><span class="dd-cval warn"><span id="dd-tts">8</span><small>min</small></span></div>
+          </div>
+          <div class="dd-card" id="dd-card-safety" hidden>
+            <div class="dd-col"><span class="dd-clab">SAFETY STOP</span></div>
+            <div class="dd-cval ok" id="dd-safety">3 m · 1:00</div>
+          </div>
+          <div class="dd-card" id="dd-card-surface" hidden>
+            <div class="dd-col"><span class="dd-clab">SURFACED</span><span class="dd-surfsub">30.0 m · 25 min — logged</span></div>
+          </div>
+        </div>
+        <button class="dd-play" id="dd-play" type="button" hidden aria-label="Play the demo dive animation"><span>▶</span></button>
+      </div>
+    </div>
+  </div>
+
   <h2>Example screens</h2>
   <div class="screens">
-    <figure><img src="assets/screens/ready.png?v=3" alt="READY screen with gas and sensor limit, the Dive button and the secondary-display disclaimer"><figcaption>Pre-dive: gas, sensor limit — and the disclaimer</figcaption></figure>
-    <figure><img src="assets/screens/dive-air.png?v=3" alt="Dive screen showing depth and no-deco limit"><figcaption>In the dive: depth rules the screen</figcaption></figure>
-    <figure><img src="assets/screens/night.png?v=3" alt="Night mode: the dive display in a dim red monochrome palette"><figcaption>Night mode: dim red, keeps your dark adaptation</figcaption></figure>
-    <figure><img src="assets/screens/deco.png?v=3" alt="Decompression screen with first stop and time to surface"><figcaption>Deco: first stop and time-to-surface</figcaption></figure>
-    <figure><img src="assets/screens/violation.png?v=3" alt="Red ABOVE STOP directive instructing to descend"><figcaption>A stop violation: the red directive names the action</figcaption></figure>
-    <figure><img src="assets/screens/slow.png?v=3" alt="SLOW ascent-rate takeover"><figcaption>Ascending too fast: SLOW, with live rate vs. max safe</figcaption></figure>
-    <figure><img src="assets/screens/tissues.png?v=3" alt="Tissue saturation view"><figcaption>Tissue loading, compartment by compartment</figcaption></figure>
-    <figure><img src="assets/screens/logbook.png?v=3" alt="Dive log with profile, max depth, dive time, minimum temperature and end gradient factor"><figcaption>After the dive: profile, stats and the no-fly estimate</figcaption></figure>
-    <figure><img src="assets/screens/logdetail.png?v=3" alt="Logbook detail with a map of the entry point and the entry coordinates"><figcaption>Logbook detail: a map of where you entered the water</figcaption></figure>
-    <figure><img src="assets/screens/planner.png?v=3" alt="No-deco planner listing no-stop time at a range of depths"><figcaption>Surface planner: no-stop time by depth, from your current tissues</figcaption></figure>
-    <figure><img src="assets/screens/manual.png?v=3" alt="Manual page with QR code"><figcaption>Built-in manual — QR opens it on the phone</figcaption></figure>
+    <figure><img src="assets/screens/ready.webp" width="422" height="514" loading="lazy" decoding="async" alt="READY screen with gas and sensor limit, the Dive button and the secondary-display disclaimer"><figcaption>Pre-dive: gas, sensor limit — and the disclaimer</figcaption></figure>
+    <figure><img src="assets/screens/dive-air.webp" width="422" height="514" loading="lazy" decoding="async" alt="Dive screen showing depth and no-deco limit"><figcaption>In the dive: depth rules the screen</figcaption></figure>
+    <figure><img src="assets/screens/night.webp" width="422" height="514" loading="lazy" decoding="async" alt="Night mode: the dive display in a dim red monochrome palette"><figcaption>Night mode: dim red, keeps your dark adaptation</figcaption></figure>
+    <figure><img src="assets/screens/deco.webp" width="422" height="514" loading="lazy" decoding="async" alt="Decompression screen with first stop and time to surface"><figcaption>Deco: first stop and time-to-surface</figcaption></figure>
+    <figure><img src="assets/screens/violation.webp" width="422" height="514" loading="lazy" decoding="async" alt="Red ABOVE STOP directive instructing to descend"><figcaption>A stop violation: the red directive names the action</figcaption></figure>
+    <figure><img src="assets/screens/slow.webp" width="422" height="514" loading="lazy" decoding="async" alt="SLOW ascent-rate takeover"><figcaption>Ascending too fast: SLOW, with live rate vs. max safe</figcaption></figure>
+    <figure><img src="assets/screens/tissues.webp" width="422" height="514" loading="lazy" decoding="async" alt="Tissue saturation view"><figcaption>Tissue loading, compartment by compartment</figcaption></figure>
+    <figure><img src="assets/screens/logbook.webp" width="422" height="514" loading="lazy" decoding="async" alt="Dive log with profile, max depth, dive time, minimum temperature and end gradient factor"><figcaption>After the dive: profile, stats and the no-fly estimate</figcaption></figure>
+    <figure><img src="assets/screens/logdetail.webp" width="422" height="514" loading="lazy" decoding="async" alt="Logbook detail with a map of the entry point and the entry coordinates"><figcaption>Logbook detail: a map of where you entered the water</figcaption></figure>
+    <figure><img src="assets/screens/planner.webp" width="422" height="514" loading="lazy" decoding="async" alt="No-deco planner listing no-stop time at a range of depths"><figcaption>Surface planner: no-stop time by depth, from your current tissues</figcaption></figure>
+    <figure><img src="assets/screens/manual.webp" width="422" height="514" loading="lazy" decoding="async" alt="Manual page with QR code"><figcaption>Built-in manual — QR opens it on the phone</figcaption></figure>
   </div>
 
   <h2>The road to a real dive computer</h2>
@@ -246,7 +300,8 @@
     <p>Nullzeit is an independent project by Matthias Schmid. Not affiliated with Apple Inc.;
     Apple&nbsp;Watch is a trademark of Apple Inc. Screens shown are simulator captures of the
     current development build; the device image uses Apple's official product bezel
-    (Apple Design Resources).</p>
+    (Apple Design Resources). The animated dive is an HTML re-creation of the guided
+    demo dive with approximated values, not a screen recording.</p>
     <p><a href="manual/">Manual</a> · <a href="imprint/">Imprint</a> · <a href="privacy/">Privacy</a> · <a href="de/" onclick="localStorage.setItem('wd-lang','de')">Deutsche Version</a></p>
   </footer>
 </main>

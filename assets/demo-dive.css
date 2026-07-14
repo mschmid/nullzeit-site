@@ -1,0 +1,82 @@
+/* Animated HTML re-creation of the guided demo dive (driven by demo-dive.js).
+   The markup ships a static mid-deco frame, so the widget is meaningful
+   without JavaScript. Same canvas proportions as the simulator captures. */
+
+.demo-cols { align-items: center; }
+.dd-wrap { display: flex; justify-content: center; }
+
+.dd-watch {
+  position: relative; width: 250px; flex: none;
+  aspect-ratio: 422 / 514;
+  border-radius: 24px; border: 1px solid #26303b; overflow: hidden;
+  background: #04080d; color: #e8edf2;
+  font-variant-numeric: tabular-nums;
+  -webkit-user-select: none; user-select: none;
+}
+.dd-bg, .dd-bg-warm { position: absolute; inset: 0; }
+.dd-bg { background: radial-gradient(120% 90% at 50% 18%, #12202b 0%, #08101a 55%, #04080d 100%); }
+.dd-bg-warm {
+  background: radial-gradient(120% 90% at 50% 18%, #3a2708 0%, #1d1204 55%, #0b0702 100%);
+  opacity: 0; transition: opacity 1.2s ease;
+}
+.dd-watch.deco .dd-bg-warm { opacity: 1; }
+
+.dd-face {
+  position: absolute; inset: 0; padding: 12px 16px 14px;
+  display: flex; flex-direction: column; line-height: 1.25;
+}
+.dd-demoband { text-align: center; }
+.dd-demopill {
+  display: inline-block; padding: 2px 12px; border-radius: 999px;
+  border: 1px solid rgba(255, 179, 64, .75); color: #ffb340;
+  font-size: 9px; font-weight: 700; letter-spacing: .2em;
+}
+.dd-toprow { display: flex; justify-content: space-between; margin-top: 8px; }
+.dd-cell.r { text-align: right; }
+.dd-num { display: block; font-size: 17px; font-weight: 700; }
+.dd-lab { display: block; font-size: 8px; font-weight: 600; letter-spacing: .2em; color: #93a1b0; }
+.dd-lab.c { text-align: center; }
+
+.dd-badgerow { height: 22px; margin-top: 2px; text-align: center; }
+.dd-badge {
+  display: inline-block; visibility: hidden; padding: 1px 12px; border-radius: 999px;
+  border: 1px solid rgba(255, 179, 64, .8); color: #ffb340;
+  font-size: 9.5px; font-weight: 700; letter-spacing: .18em;
+}
+.dd-badge.on { visibility: visible; }
+
+.dd-depthrow { text-align: center; margin-top: 2px; }
+.dd-depth { font-size: 46px; font-weight: 800; letter-spacing: .01em; color: #45d6b1; }
+.dd-depth.warn { color: #ffb340; }
+.dd-unit { font-size: 19px; font-weight: 600; color: #93a1b0; margin-left: 4px; }
+.dd-stats { text-align: center; font-size: 12px; font-weight: 600; color: #cfd8e0; margin-top: 3px; white-space: nowrap; }
+
+.dd-card {
+  margin-top: auto; min-height: 50px;
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  background: rgba(255, 255, 255, .08); border-radius: 13px; padding: 7px 14px;
+}
+.dd-card[hidden] { display: none; }
+.dd-col { display: flex; flex-direction: column; }
+.dd-col.r { text-align: right; }
+.dd-clab { font-size: 8px; font-weight: 600; letter-spacing: .2em; color: #93a1b0; }
+.dd-cval { font-size: 16px; font-weight: 800; white-space: nowrap; }
+.dd-cval small { font-size: 11px; font-weight: 600; color: #93a1b0; margin-left: 3px; }
+.dd-cval.ok { color: #45d6b1; }
+.dd-cval.warn { color: #ffb340; }
+.dd-cval.big { font-size: 20px; }
+.dd-surfsub { font-size: 11px; font-weight: 600; color: #cfd8e0; }
+
+.dd-play {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(4, 8, 13, .45); border: 0; border-radius: 24px;
+  color: #45d6b1; font: inherit; cursor: pointer;
+}
+.dd-play span {
+  display: flex; align-items: center; justify-content: center;
+  width: 54px; height: 54px; border-radius: 50%;
+  border: 2px solid #45d6b1; background: rgba(4, 8, 13, .6);
+  font-size: 20px; padding-left: 4px;
+}
+.dd-play[hidden] { display: none; }
